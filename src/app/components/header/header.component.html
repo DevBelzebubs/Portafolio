@@ -1,0 +1,24 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <nav class="nav">
+    <div class="nav-brand">
+      <h2>JD</h2>
+    </div>
+    <ul class="nav-menu" [class.active]="isMenuOpen">
+      <li><a href="#home" (click)="closeMenu()">{{ 'nav.home' | translate }}</a></li>
+      <li><a href="#about" (click)="closeMenu()">{{ 'nav.about' | translate }}</a></li>
+      <li><a href="#skills" (click)="closeMenu()">{{ 'nav.skills' | translate }}</a></li>
+      <li><a href="#projects" (click)="closeMenu()">{{ 'nav.projects' | translate }}</a></li>
+      <li><a href="#contact" (click)="closeMenu()">{{ 'nav.contact' | translate }}</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="language-toggle" (click)="toggleLanguage()">
+        {{ currentLanguage === 'es' ? 'EN' : 'ES' }}
+      </button>
+    </div>
+    <div class="nav-toggle" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>

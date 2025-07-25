@@ -1,0 +1,42 @@
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 class="section-title">{{ 'contact.title' | translate }}</h2>
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>{{ 'contact.subtitle' | translate }}</h3>
+        <p>{{ 'contact.description' | translate }}</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <span>{{ 'contact.email' | translate }}</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📱</span>
+            <span>{{ 'contact.phone' | translate }}</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span>{{ 'contact.location' | translate }}</span>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/juan-diego-gabriel-rios-69444a263/" class="social-link" target="_blank">LinkedIn</a>
+          <a href="https://github.com/DevBelzebubs" class="social-link" target="_blank">GitHub</a>
+          <a href="#" class="social-link">Twitter</a>
+        </div>
+      </div>
+      <form class="contact-form" (ngSubmit)="onSubmit()" [formGroup]="formControl">
+        <div class="form-group">
+          <input type="text" formControlName="name" [placeholder]="'contact.form.name' | translate" required />
+        </div>
+        <div class="form-group">
+          <input type="email" formControlName="email" [placeholder]="'contact.form.email' | translate" required />
+        </div>
+        <div class="form-group">
+          <textarea formControlName="message" [placeholder]="'contact.form.message' | translate" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">{{ 'contact.form.send' | translate }}</button>
+      </form>
+    </div>
+  </div>
+</section>
