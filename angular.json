@@ -22,7 +22,8 @@
               "namedChunks": false,
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false
+              "sourceMap": false,
+              "baseHref": "/Portafolio/"
             }
           },
           "options": {
@@ -54,6 +55,9 @@
             }
           },
           "defaultConfiguration": "development"
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       },
       "prefix": "app",

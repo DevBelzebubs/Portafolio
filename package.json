@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build"
+    "build": "ng build",
+    "deploy":"ng build --configuration production --base-href \"/Portafolio/\" && npx angular-cli-ghpages --dir=dist/demo"
   },
   "dependencies": {
     "@angular/animations": "^20.0.0",
@@ -23,6 +24,7 @@
     "@angular/build": "^20.0.0",
     "@angular/cli": "^20.0.0",
     "@angular/compiler-cli": "^20.0.0",
+    "angular-cli-ghpages": "^2.0.3",
     "typescript": "^5.8.2"
   }
 }
