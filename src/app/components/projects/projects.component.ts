@@ -33,14 +33,14 @@ export class ProjectsComponent {
       {
         title: this.languageService.translate('projects.hospital.title'),
         description: this.languageService.translate('projects.hospital.description'),
-        image: '/assets/img/hospital.png',
+        image: 'assets/img/hospital.png',
         technologies: ['Angular', 'Spring Boot', 'MySQL'],
         github: 'https://github.com/DevBelzebubs/NovaSalud'
       },
       {
         title: this.languageService.translate('projects.poglotech.title'),
         description: this.languageService.translate('projects.poglotech.description'),
-        image: '/assets/img/poglotech.png',
+        image: 'assets/img/poglotech.png',
         technologies: ['Laravel', 'MySQL'],
         github: 'https://github.com/DevBelzebubs/Poglotech'
       },
