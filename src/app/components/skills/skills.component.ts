@@ -25,19 +25,19 @@ export class SkillsComponent {
     {
       title: 'Frontend',
       skills: [
-        { name: 'HTML/CSS', icon: '🌐', level: 90 },
-        { name: 'JavaScript', icon: '⚡', level: 85 },
-        { name: 'TypeScript', icon: '📘', level: 80 },
-        { name: 'Angular', icon: '🅰️', level: 70 },
+        { name: 'HTML/CSS', icon: '🌐', level: 65 },
+        { name: 'JavaScript', icon: '⚡', level: 60 },
+        { name: 'TypeScript', icon: '📘', level: 55 },
+        { name: 'Angular', icon: '🅰️', level: 55 },
         { name: 'React', icon: '⚛️', level: 45 },
       ]
     },
     {
       title: 'Backend',
       skills: [
-        { name: 'Java', icon: '☕', level: 70 },
-        { name: 'Spring', icon: '🍃', level: 60 },
-        { name: 'PHP', icon: '🐘', level: 55 },
+        { name: 'Java', icon: '☕', level: 60 },
+        { name: 'Spring', icon: '🍃', level: 50 },
+        { name: 'PHP', icon: '🐘', level: 45 },
         { name: 'Laravel', icon: '🔺', level: 40 }
       ]
     }

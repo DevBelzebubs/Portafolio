@@ -61,6 +61,7 @@ export class LanguageService {
       'contact.form.send': 'Enviar Mensaje',
       'contact.form.success': '¡Gracias por tu mensaje! Te responderé pronto.',
       'contact.form.error': 'Por favor, completa todos los campos del formulario.',
+      'contact.form.error.email': 'Por favor, ingresa un correo electrónico válido',
       'footer.rights': 'Todos los derechos reservados.'
     },
     en: {
@@ -111,6 +112,7 @@ export class LanguageService {
       'contact.form.send': 'Send Message',
       'contact.form.success': 'Thank you for your message! I\'ll get back to you soon.',
       'contact.form.error': 'Please fill out all fields in the form.',
+      'contact.form.error.email': 'Please enter a valid email address',
       'footer.rights': 'All rights reserved.'
     }
   };
