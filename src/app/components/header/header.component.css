@@ -1,4 +1,4 @@
-.language-toggle {
+.language-select {
   background: linear-gradient(135deg, #2563eb, #7c3aed);
   color: white;
   border: none;
@@ -9,11 +9,44 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 10px rgba(37, 99, 235, 0.3);
+  appearance: none;
+  min-width: 120px;
 }
 
-.language-toggle:hover {
+.language-select:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.language-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.language-selector {
+  position: relative;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 2px solid rgba(37, 99, 235, 0.3);
+  color: #2563eb;
+  padding: 8px 12px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.theme-toggle:hover {
+  background: rgba(37, 99, 235, 0.1);
+  transform: translateY(-2px);
+  border-color: #2563eb;
 }
 
 .nav-actions {
@@ -25,13 +58,21 @@
 @media (max-width: 768px) {
   .nav-actions {
     position: absolute;
-    right: 60px;
+    right: 70px;
     top: 50%;
     transform: translateY(-50%);
+    gap: 0.5rem;
   }
   
-  .language-toggle {
+  .language-select {
     padding: 6px 12px;
     font-size: 0.8rem;
+    min-width: 100px;
+  }
+  
+  .theme-toggle {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
   }
 }

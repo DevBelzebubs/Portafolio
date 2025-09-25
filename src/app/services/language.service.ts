@@ -5,12 +5,24 @@ export interface Translations {
   [key: string]: string;
 }
 
+export interface Language {
+  code: string;
+  name: string;
+  flag: string;
+}
 @Injectable({
   providedIn: 'root'
 })
 export class LanguageService {
   private currentLanguageSubject = new BehaviorSubject<string>('es');
   public currentLanguage$ = this.currentLanguageSubject.asObservable();
+
+  public availableLanguages: Language[] = [
+    { code: 'es', name: 'Español', flag: '🇪🇸' },
+    { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'fr', name: 'Français', flag: '🇫🇷' },
+    { code: 'de', name: 'Deutsch', flag: '🇩🇪' }
+  ];
 
   private translations: { [lang: string]: Translations } = {
     es: {
@@ -114,6 +126,98 @@ export class LanguageService {
       'contact.form.error': 'Please fill out all fields in the form.',
       'contact.form.error.email': 'Please enter a valid email address',
       'footer.rights': 'All rights reserved.'
+    },
+    fr: {
+      'nav.home': 'Accueil',
+      'nav.about': 'À propos',
+      'nav.skills': 'Compétences',
+      'nav.projects': 'Projets',
+      'nav.contact': 'Contact',
+      
+      'hero.greeting': 'Salut, je suis',
+      'hero.title': 'Développeur Full-Stack Junior',
+      'hero.description': 'Passionné par la création d\'expériences web incroyables avec des technologies modernes. Actuellement à la recherche d\'opportunités de stage pour grandir et contribuer à des projets innovants.',
+      'hero.viewWork': 'Voir Mon Travail',
+      'hero.getInTouch': 'Me Contacter',
+      
+      'about.title': 'À Propos de Moi',
+      'about.description1': 'Je suis un développeur full-stack junior passionné avec de l\'expérience dans les technologies web modernes. Je recherche actuellement des opportunités pour appliquer mes compétences dans des projets réels et continuer à apprendre dans un environnement collaboratif.',
+      'about.description2': 'Mon parcours dans le développement web a commencé par la curiosité de savoir comment fonctionnent les sites web, et a évolué vers une profonde appréciation du développement frontend et backend. J\'aime résoudre des problèmes complexes et créer des applications conviviales.',
+      'about.projectsCompleted': 'Projets Terminés',
+      'about.technologiesMastered': 'Technologies Maîtrisées',
+      'about.yearsLearning': 'Années d\'Apprentissage',
+      
+      'skills.title': 'Compétences Techniques',
+      'skills.frontend': 'Frontend',
+      'skills.backend': 'Backend',
+      
+      'projects.title': 'Projets en Vedette',
+      'projects.hospital.title': 'Système de gestion des rendez-vous médicaux',
+      'projects.hospital.description': 'Système de gestion des rendez-vous médicaux avec authentification des utilisateurs, enregistrement des horaires et intégration des paiements.',
+      'projects.poglotech.title': 'App de gestion d\'inventaire pour la vente et la gestion de pièces détachées d\'ordinateurs portables',
+      'projects.poglotech.description': 'Application web responsive pour la gestion d\'inventaire et la vente de pièces détachées d\'ordinateurs portables, avec des fonctionnalités de recherche et de filtrage.',
+      'projects.github': 'GitHub',
+      
+      'contact.title': 'Entrer en Contact',
+      'contact.subtitle': 'Connectons-nous',
+      'contact.description': 'Je suis toujours ouvert à discuter de nouvelles opportunités et de projets passionnants.',
+      'contact.email': 'juandiego.gr05@email.com',
+      'contact.phone': '+51 960 662 079',
+      'contact.location': 'Lima, PE',
+      'contact.form.name': 'Votre Nom',
+      'contact.form.email': 'Votre Email',
+      'contact.form.message': 'Votre Message',
+      'contact.form.send': 'Envoyer le Message',
+      'contact.form.success': 'Merci pour votre message ! Je vous répondrai bientôt.',
+      'contact.form.error': 'Veuillez remplir tous les champs du formulaire.',
+      'contact.form.error.email': 'Veuillez entrer une adresse email valide',
+      'footer.rights': 'Tous droits réservés.'
+    },
+    de: {
+      'nav.home': 'Startseite',
+      'nav.about': 'Über mich',
+      'nav.skills': 'Fähigkeiten',
+      'nav.projects': 'Projekte',
+      'nav.contact': 'Kontakt',
+      
+      'hero.greeting': 'Hallo, ich bin',
+      'hero.title': 'Junior Full-Stack Entwickler',
+      'hero.description': 'Leidenschaftlich daran interessiert, erstaunliche Web-Erfahrungen mit modernen Technologien zu schaffen. Derzeit auf der Suche nach Praktikumsmöglichkeiten, um zu wachsen und zu innovativen Projekten beizutragen.',
+      'hero.viewWork': 'Meine Arbeit Ansehen',
+      'hero.getInTouch': 'Kontakt Aufnehmen',
+      
+      'about.title': 'Über Mich',
+      'about.description1': 'Ich bin ein leidenschaftlicher Junior Full-Stack-Entwickler mit Erfahrung in modernen Web-Technologien. Derzeit suche ich nach Möglichkeiten, meine Fähigkeiten in realen Projekten anzuwenden und in einer kollaborativen Umgebung weiter zu lernen.',
+      'about.description2': 'Meine Reise in der Webentwicklung begann mit der Neugier darauf, wie Websites funktionieren, und hat sich zu einer tiefen Wertschätzung sowohl für Frontend- als auch Backend-Entwicklung entwickelt. Ich löse gerne komplexe Probleme und erstelle benutzerfreundliche Anwendungen.',
+      'about.projectsCompleted': 'Abgeschlossene Projekte',
+      'about.technologiesMastered': 'Beherrschte Technologien',
+      'about.yearsLearning': 'Jahre des Lernens',
+      
+      'skills.title': 'Technische Fähigkeiten',
+      'skills.frontend': 'Frontend',
+      'skills.backend': 'Backend',
+      
+      'projects.title': 'Ausgewählte Projekte',
+      'projects.hospital.title': 'Medizinisches Terminverwaltungssystem',
+      'projects.hospital.description': 'Medizinisches Terminverwaltungssystem mit Benutzerauthentifizierung, Zeitregistrierung und Zahlungsintegration.',
+      'projects.poglotech.title': 'Inventarverwaltungs-App für den Verkauf und die Verwaltung von Laptop-Ersatzteilen',
+      'projects.poglotech.description': 'Responsive Webanwendung für Inventarverwaltung und Verkauf von Laptop-Teilen, mit Such- und Filterfunktionen.',
+      'projects.github': 'GitHub',
+      
+      'contact.title': 'Kontakt Aufnehmen',
+      'contact.subtitle': 'Lass uns Verbinden',
+      'contact.description': 'Ich bin immer offen für Diskussionen über neue Möglichkeiten und aufregende Projekte.',
+      'contact.email': 'juandiego.gr05@email.com',
+      'contact.phone': '+51 960 662 079',
+      'contact.location': 'Lima, PE',
+      'contact.form.name': 'Ihr Name',
+      'contact.form.email': 'Ihre E-Mail',
+      'contact.form.message': 'Ihre Nachricht',
+      'contact.form.send': 'Nachricht Senden',
+      'contact.form.success': 'Vielen Dank für Ihre Nachricht! Ich werde Ihnen bald antworten.',
+      'contact.form.error': 'Bitte füllen Sie alle Felder des Formulars aus.',
+      'contact.form.error.email': 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
+      'footer.rights': 'Alle Rechte vorbehalten.'
     }
   };
 
@@ -136,9 +240,13 @@ export class LanguageService {
     return this.translations[currentLang]?.[key] || key;
   }
 
-  toggleLanguage(): void {
-    const currentLang = this.getCurrentLanguage();
-    const newLang = currentLang === 'es' ? 'en' : 'es';
-    this.setLanguage(newLang);
+  getLanguageName(code: string): string {
+    const language = this.availableLanguages.find(lang => lang.code === code);
+    return language ? language.name : code;
+  }
+
+  getLanguageFlag(code: string): string {
+    const language = this.availableLanguages.find(lang => lang.code === code);
+    return language ? language.flag : '';
   }
 }
