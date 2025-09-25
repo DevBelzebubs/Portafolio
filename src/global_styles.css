@@ -32,29 +32,6 @@
   --gradient-primary: linear-gradient(135deg, #3b82f6, #8b5cf6);
   --header-bg: rgba(15, 23, 42, 0.95);
   --header-bg-scrolled: rgba(15, 23, 42, 0.98);
-  --select-bg: #334155;
-  --select-text: #f1f5f9;
-  --select-option-bg: #1e293b;
-  --select-option-hover: #475569;
-}
-
-:root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --bg-tertiary: #ffffff;
-  --text-primary: #333333;
-  --text-secondary: #64748b;
-  --text-tertiary: #1e293b;
-  --border-color: rgba(0, 0, 0, 0.1);
-  --shadow-light: rgba(0, 0, 0, 0.1);
-  --shadow-medium: rgba(0, 0, 0, 0.15);
-  --gradient-primary: linear-gradient(135deg, #2563eb, #7c3aed);
-  --header-bg: rgba(255, 255, 255, 0.95);
-  --header-bg-scrolled: rgba(255, 255, 255, 0.98);
-  --select-bg: #f8fafc;
-  --select-text: #1e293b;
-  --select-option-bg: #ffffff;
-  --select-option-hover: #e2e8f0;
 }
 
 html {
