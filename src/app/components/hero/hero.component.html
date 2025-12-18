@@ -1,22 +1,38 @@
-<section id="home" class="hero">
-  <div class="hero-content">
-    <div class="hero-text">
-      <h1 class="hero-title">
-        {{ 'hero.greeting' | translate }} <span class="highlight">Juan Diego</span>
+<section id="home" 
+  class="relative h-auto lg:min-h-screen flex items-center justify-center px-6 py-16 sm:py-24 lg:py-32 bg-white overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none opacity-40">
+    <div class="absolute top-[5%] right-[10%] w-48 h-48 bg-blue-50 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-[5%] left-[10%] w-48 h-48 bg-purple-50 rounded-full blur-3xl"></div>
+  </div>
+  <div class="relative z-10 max-w-[1200px] mx-auto w-full flex flex-col items-center">
+    <div class="relative w-[280px] h-[280px] lg:w-[350px] lg:h-[350px] rounded-full p-1 bg-gradient-to-br from-blue-600 to-purple-600 shadow-2xl overflow-hidden">
+          <div class="w-full h-full rounded-full border-4 border-white overflow-hidden">
+            <img src="assets/img/jd.jpg" alt="Juan Diego" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          </div>
+        </div>
+    <div class="text-center max-w-[800px] px-2"> 
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#1e293b] leading-tight mb-4 lg:mb-6 animate-[fadeInUp_1s_ease-out]">
+        {{ 'hero.greeting' | translate }} 
+        <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Juan Diego
+        </span>
       </h1>
-      <h2 class="hero-subtitle">{{ 'hero.title' | translate }}</h2>
-      <p class="hero-description">
+      <h2 class="text-base sm:text-xl font-semibold text-slate-600 mb-4 lg:mb-6 animate-[fadeInUp_1s_ease-out_0.2s_both]">
+        {{ 'hero.title' | translate }}
+      </h2>
+      <p class="text-sm sm:text-lg text-slate-500 leading-relaxed mb-8 lg:mb-10 max-w-[600px] mx-auto animate-[fadeInUp_1s_ease-out_0.4s_both]">
         {{ 'hero.description' | translate }}
       </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">{{ 'hero.viewWork' | translate }}</a>
-        <a href="#contact" class="btn btn-secondary">{{ 'hero.getInTouch' | translate }}</a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <div class="hero-avatar">
-        <img src="assets/img/jd.jpg" alt="Juan Diego" />
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-[fadeInUp_1s_ease-out_0.6s_both]">
+        <a href="#projects" 
+           class="px-8 py-3 rounded-full font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-100 hover:-translate-y-1 transition-all text-sm">
+          {{ 'hero.viewWork' | translate }}
+        </a>
+        <a href="#contact" 
+           class="px-8 py-3 rounded-full font-bold border-2 border-blue-600 text-blue-600 bg-white hover:bg-blue-50 transition-all text-sm">
+          {{ 'hero.getInTouch' | translate }}
+        </a>
       </div>
     </div>
   </div>
-</section>
+</section>  

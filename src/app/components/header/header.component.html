@@ -1,24 +1,49 @@
-<header class="header" [class.scrolled]="isScrolled">
-  <nav class="nav">
+<header 
+  class="fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 border-b"
+  [ngClass]="isScrolled 
+    ? 'bg-white/98 shadow-lg border-black/10 py-2' 
+    : 'bg-white/95 backdrop-blur-md border-transparent py-4'"
+>
+  <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-8">
     <div class="nav-brand">
-      <h2>JD</h2>
+      <h2 class="text-3xl font-bold bg-gradient-to-br from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        JD
+      </h2>
     </div>
-    <ul class="nav-menu" [class.active]="isMenuOpen">
-      <li><a href="#home" (click)="closeMenu()">{{ 'nav.home' | translate }}</a></li>
-      <li><a href="#about" (click)="closeMenu()">{{ 'nav.about' | translate }}</a></li>
-      <li><a href="#skills" (click)="closeMenu()">{{ 'nav.skills' | translate }}</a></li>
-      <li><a href="#projects" (click)="closeMenu()">{{ 'nav.projects' | translate }}</a></li>
-      <li><a href="#contact" (click)="closeMenu()">{{ 'nav.contact' | translate }}</a></li>
+    <ul 
+      class="flex list-none gap-8 items-center transition-all duration-300
+             max-md:fixed max-md:top-[70px] max-md:width-full max-md:h-[calc(100vh-70px)] max-md:bg-white max-md:flex-col max-md:pt-8 max-md:shadow-xl"
+      [ngClass]="isMenuOpen ? 'max-md:left-0' : 'max-md:left-[-100%]'"
+    >
+      @for (item of ['home', 'about', 'skills', 'projects', 'contact']; track item) {
+        <li>
+          <a 
+            [href]="'#' + item" 
+            (click)="closeMenu()"
+            class="relative font-medium text-slate-700 hover:text-blue-600 transition-colors duration-300
+                   after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 
+                   after:bg-gradient-to-r after:from-blue-600 after:to-purple-600 after:transition-all hover:after:w-full"
+          >
+            {{ 'nav.' + item | translate }}
+          </a>
+        </li>
+      }
     </ul>
-    <div class="nav-actions">
-      <button class="language-toggle" (click)="toggleLanguage()">
+    <div class="flex items-center gap-4">
+      <button 
+        (click)="toggleLanguage()"
+        class="px-3 py-1 rounded-md border-2 border-blue-600 text-blue-600 font-bold hover:bg-blue-600 hover:text-white transition-all text-sm"
+      >
         {{ currentLanguage === 'es' ? 'EN' : 'ES' }}
       </button>
-    </div>
-    <div class="nav-toggle" (click)="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <div 
+        class="hidden max-md:flex flex-col gap-1.5 cursor-pointer" 
+        (click)="toggleMenu()"
+      >
+        <span class="w-6 h-0.5 bg-slate-800 transition-transform" [class.rotate-45]="isMenuOpen" [class.translate-y-2]="isMenuOpen"></span>
+        <span class="w-6 h-0.5 bg-slate-800 transition-opacity" [class.opacity-0]="isMenuOpen"></span>
+        <span class="w-6 h-0.5 bg-slate-800 transition-transform" [class.-rotate-45]="isMenuOpen" [class.-translate-y-2]="isMenuOpen"></span>
+      </div>
     </div>
   </nav>
 </header>

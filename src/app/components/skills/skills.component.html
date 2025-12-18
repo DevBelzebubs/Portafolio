@@ -1,18 +1,35 @@
-<section id="skills" class="skills">
-  <div class="container">
-    <h2 class="section-title">{{ 'skills.title' | translate }}</h2>
-    <div class="skills-grid">
-      <div class="skill-category" *ngFor="let category of skillCategories">
-        <h3>{{ 'skills.' + category.title.toLowerCase() | translate }}</h3>
-        <div class="skill-items">
-          <div class="skill-item" *ngFor="let skill of category.skills">
-            <div class="skill-icon">{{ skill.icon }}</div>
-            <span class="skill-name">{{ skill.name }}</span>
-            <div class="skill-level">
-              <div class="skill-bar">
-                <div class="skill-progress" [style.width.%]="skill.level"></div>
+<section id="skills" class="py-20 bg-white">
+  <div class="max-w-[1200px] mx-auto px-5">
+    <h2 class="relative text-center text-4xl font-bold mb-12 
+               after:content-[''] after:absolute after:-bottom-2.5 after:left-1/2 after:-translate-x-1/2 
+               after:w-16 after:h-1 after:bg-gradient-to-r after:from-blue-600 after:to-purple-600 after:rounded-full">
+      {{ 'skills.title' | translate }}
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div *ngFor="let category of skillCategories" 
+           class="bg-white p-8 rounded-2xl shadow-md border border-slate-50 hover:-translate-y-1 transition-transform duration-300">
+        
+        <h3 class="text-xl font-semibold mb-6 text-slate-800">
+          {{ 'skills.' + category.title.toLowerCase() | translate }}
+        </h3>
+
+        <div class="flex flex-col gap-6">
+          <div *ngFor="let skill of category.skills" 
+               class="grid grid-cols-[auto_1fr_auto] items-center gap-4">
+            
+            <span class="text-2xl">{{ skill.icon }}</span>
+            <span class="font-medium text-slate-700">{{ skill.name }}</span>
+            
+            <div class="w-24 md:w-32">
+              <div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                <div 
+                  class="h-full bg-gradient-to-r from-blue-600 to-purple-600 rounded-full transition-all duration-1000 ease-out"
+                  [style.width.%]="skill.level">
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>

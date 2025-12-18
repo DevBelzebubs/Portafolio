@@ -1,21 +1,40 @@
-<section id="projects" class="projects">
-  <div class="container">
-    <h2 class="section-title">{{ 'projects.title' | translate }}</h2>
-    <div class="projects-grid">
-      <div class="project-card" *ngFor="let project of projects">
-        <div class="project-image">
-          <img [src]="project.image" [alt]="project.title" />
-          <div class="project-overlay">
-            <div class="project-links">
-              <a [href]="project.github" class="btn btn-small btn-outline" target="_blank">{{ 'projects.github' | translate }}</a>
+<section id="projects" class="py-20 bg-slate-50">
+  <div class="max-w-[1200px] mx-auto px-5">
+    <h2 class="relative text-center text-4xl font-bold mb-12 
+               after:content-[''] after:absolute after:-bottom-2.5 after:left-1/2 after:-translate-x-1/2 
+               after:w-[60px] after:h-1 after:bg-gradient-to-r after:from-blue-600 after:to-purple-600 after:rounded-full">
+      {{ 'projects.title' | translate }}
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div *ngFor="let project of projects" 
+           class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group">
+        
+        <div class="relative h-[200px] overflow-hidden">
+          <img [src]="project.image" [alt]="project.title" 
+               class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+          
+          <div class="absolute inset-0 bg-blue-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="flex gap-4">
+              <a [href]="project.github" target="_blank"
+                 class="px-5 py-2 border-2 border-white text-white rounded-full text-sm font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                {{ 'projects.github' | translate }}
+              </a>
             </div>
           </div>
         </div>
-        <div class="project-content">
-          <h3>{{ project.title }}</h3>
-          <p>{{ project.description }}</p>
-          <div class="project-tech">
-            <span class="tech-tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
+
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-slate-800 mb-2">{{ project.title }}</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-4">
+            {{ project.description }}
+          </p>
+          
+          <div class="flex flex-wrap gap-2">
+            <span *ngFor="let tech of project.technologies" 
+                  class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">
+              {{ tech }}
+            </span>
           </div>
         </div>
       </div>

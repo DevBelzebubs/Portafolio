@@ -1,70 +1,73 @@
 <section id="contact" class="py-20 bg-white">
-  <div class="max-w-[1200px] mx-auto px-5">
-    <h2 class="relative text-center text-[2.5rem] font-bold mb-12 after:content-[''] after:absolute after:-bottom-[10px] after:left-1/2 after:-translate-x-1/2 after:w-[60px] after:h-[1px] after:bg-gradient-to-r after:from-[#2563eb] after:to-[#7c3aed] after:rounded-[2px]">
+  <div class="max-w-7xl mx-auto px-5">
+    <h2 class="relative text-center text-4xl md:text-5xl font-bold mb-12 
+               after:content-[''] after:absolute after:-bottom-3 after:left-1/2 after:-translate-x-1/2 
+               after:w-16 after:h-1 after:bg-gradient-to-r after:from-blue-600 after:to-purple-600 after:rounded-full">
       {{ 'contact.title' | translate }}
     </h2>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-[1000px] mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-5xl mx-auto">
       
       <div class="contact-info">
-        <h3 class="text-[1.8rem] font-semibold mb-4 text-[#1e293b]">
+        <h3 class="text-3xl font-semibold mb-4 text-slate-800">
           {{ 'contact.subtitle' | translate }}
         </h3>
-        <p class="text-[1.1rem] text-[#64748b] leading-[1.7] mb-8">
+        <p class="text-lg text-slate-500 leading-relaxed mb-8">
           {{ 'contact.description' | translate }}
         </p>
 
-        <div class="mb-8">
-          <div class="flex items-center gap-4 mb-4">
-            <span class="text-[1.2rem]">📧</span>
-            <span class="text-[#64748b]">{{ 'contact.email' | translate }}</span>
+        <div class="mb-8 space-y-4">
+          <div class="flex items-center gap-4 text-slate-500">
+            <span class="text-xl">📧</span>
+            <span>{{ 'contact.email' | translate }}</span>
           </div>
-          <div class="flex items-center gap-4 mb-4">
-            <span class="text-[1.2rem]">📱</span>
-            <span class="text-[#64748b]">{{ 'contact.phone' | translate }}</span>
+          <div class="flex items-center gap-4 text-slate-500">
+            <span class="text-xl">📱</span>
+            <span>{{ 'contact.phone' | translate }}</span>
           </div>
-          <div class="flex items-center gap-4 mb-4">
-            <span class="text-[1.2rem]">📍</span>
-            <span class="text-[#64748b]">{{ 'contact.location' | translate }}</span>
+          <div class="flex items-center gap-4 text-slate-500">
+            <span class="text-xl">📍</span>
+            <span>{{ 'contact.location' | translate }}</span>
           </div>
         </div>
 
-        <div class="flex gap-4">
-          <a href="https://www.linkedin.com/in/juan-diego-gabriel-rios-69444a263/" 
-             class="px-4 py-2 bg-[#f1f5f9] text-[#475569] no-underline rounded-lg font-medium transition-all duration-300 hover:bg-[#2563eb] hover:text-white hover:-translate-y-0.5" 
-             target="_blank">LinkedIn</a>
-          <a href="https://github.com/DevBelzebubs" 
-             class="px-4 py-2 bg-[#f1f5f9] text-[#475569] no-underline rounded-lg font-medium transition-all duration-300 hover:bg-[#2563eb] hover:text-white hover:-translate-y-0.5" 
-             target="_blank">GitHub</a>
-          <a href="#" 
-             class="px-4 py-2 bg-[#f1f5f9] text-[#475569] no-underline rounded-lg font-medium transition-all duration-300 hover:bg-[#2563eb] hover:text-white hover:-translate-y-0.5">Twitter</a>
+        <div class="flex flex-wrap gap-4">
+          @for (social of ['LinkedIn', 'GitHub', 'Twitter']; track social) {
+            <a href="#" 
+               class="px-5 py-2.5 bg-slate-100 text-slate-600 no-underline rounded-lg font-medium 
+                      transition-all duration-300 hover:bg-blue-600 hover:text-white hover:-translate-y-1 shadow-sm">
+              {{ social }}
+            </a>
+          }
         </div>
       </div>
 
-      <form class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.1)]" 
+      <form class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100" 
             (ngSubmit)="onSubmit()" [formGroup]="formControl">
         
         <div class="mb-6">
           <input type="text" formControlName="name" 
-                 class="w-full px-4 py-3 border-2 border-[#e2e8f0] rounded-lg text-base focus:outline-none focus:border-[#2563eb] transition-colors" 
-                 [placeholder]="'contact.form.name' | translate" required />
+                 class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg text-base outline-none 
+                        focus:border-blue-600 transition-all placeholder:text-slate-400" 
+                 [placeholder]="'contact.form.name' | translate" />
         </div>
 
         <div class="mb-6">
           <input type="email" formControlName="email" 
-                 class="w-full px-4 py-3 border-2 border-[#e2e8f0] rounded-lg text-base focus:outline-none focus:border-[#2563eb] transition-colors" 
-                 [placeholder]="'contact.form.email' | translate" required />
+                 class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg text-base outline-none 
+                        focus:border-blue-600 transition-all placeholder:text-slate-400" 
+                 [placeholder]="'contact.form.email' | translate" />
           
           @if (formControl.get('email')?.touched && formControl.get('email')?.invalid) {
-            <div class="mt-2 text-red-500 text-sm space-y-1">
+            <div class="mt-2 text-red-500 text-sm animate-in fade-in slide-in-from-top-1">
               @if (formControl.get('email')?.errors?.['required']) {
-                <p>El correo es obligatorio.</p>
+                <p class="flex items-center gap-1"><span>⚠</span> El correo es obligatorio.</p>
               }
               @if (formControl.get('email')?.errors?.['email']) {
                 <p>El formato del correo es inválido.</p>
               }
               @if (formControl.get('email')?.errors?.['pattern']) {
-                <p>Solo se permiten correos &#64;gmail.com.</p>
+                <p>Solo se permiten correos @gmail.com.</p>
               }
             </div>
           }
@@ -72,12 +75,15 @@
 
         <div class="mb-6">
           <textarea formControlName="message" 
-                    class="w-full px-4 py-3 border-2 border-[#e2e8f0] rounded-lg text-base focus:outline-none focus:border-[#2563eb] transition-colors resize-y min-h-[120px]" 
-                    [placeholder]="'contact.form.message' | translate" rows="5" required></textarea>
+                    class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg text-base outline-none 
+                           focus:border-blue-600 transition-all resize-y min-h-[150px] placeholder:text-slate-400" 
+                    [placeholder]="'contact.form.message' | translate" rows="5"></textarea>
         </div>
 
-        <button type="submit" 
-                class="w-full md:w-auto inline-block px-8 py-3 rounded-full font-semibold bg-gradient-to-br from-[#2563eb] to-[#7c3aed] text-white shadow-[0_4px_15px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 hover:shadow-lg transition-all cursor-pointer text-center disabled:opacity-50 disabled:cursor-not-allowed">
+        <button type="submit" [disabled]="formControl.invalid"
+                class="w-full md:w-auto px-10 py-3.5 rounded-full font-bold bg-gradient-to-br from-blue-600 to-purple-600 
+                       text-white shadow-lg shadow-blue-200 hover:-translate-y-1 hover:shadow-blue-300 
+                       transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none">
           {{ 'contact.form.send' | translate }}
         </button>
       </form>
