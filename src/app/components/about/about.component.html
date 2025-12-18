@@ -1,27 +1,41 @@
-<section id="about" class="about">
-  <div class="container">
-    <h2 class="section-title">{{ 'about.title' | translate }}</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>
+<section id="about" class="py-20 bg-[#f8fafc]">
+  <div class="max-w-[1200px] mx-auto px-5">
+    <h2 class="relative text-center text-[2.5rem] font-bold mb-12 after:content-[''] after:absolute after:-bottom-[10px] after:left-1/2 after:-translate-x-1/2 after:w-[60px] after:h-[1px] after:bg-gradient-to-r after:from-[#2563eb] after:to-[#7c3aed] after:rounded-[2px]">
+      {{ 'about.title' | translate }}
+    </h2>
+
+    <div class="max-w-[800px] mx-auto text-center">
+      <div class="space-y-8">
+        <p class="text-[1.1rem] text-[#64748b] leading-[1.8]">
           {{ 'about.description1' | translate }}
         </p>
-        <p>
+        <p class="text-[1.1rem] text-[#64748b] leading-[1.8]">
           {{ 'about.description2' | translate }}
         </p>
-        <div class="about-stats">
-          <div class="stat">
-            <h3>3</h3>
-            <p>{{ 'about.projectsCompleted' | translate }}</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          
+          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:-translate-y-[5px]">
+            <h3 class="text-[2.5rem] font-bold bg-gradient-to-br from-[#2563eb] to-[#7c3aed] bg-clip-text text-transparent mb-2">
+              3
+            </h3>
+            <p class="text-[#64748b] font-medium">{{ 'about.projectsCompleted' | translate }}</p>
           </div>
-          <div class="stat">
-            <h3>6</h3>
-            <p>{{ 'about.technologiesMastered' | translate }}</p>
+
+          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:-translate-y-[5px]">
+            <h3 class="text-[2.5rem] font-bold bg-gradient-to-br from-[#2563eb] to-[#7c3aed] bg-clip-text text-transparent mb-2">
+              6
+            </h3>
+            <p class="text-[#64748b] font-medium">{{ 'about.technologiesMastered' | translate }}</p>
           </div>
-          <div class="stat">
-            <h3>1+</h3>
-            <p>{{ 'about.yearsLearning' | translate }}</p>
+
+          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:-translate-y-[5px]">
+            <h3 class="text-[2.5rem] font-bold bg-gradient-to-br from-[#2563eb] to-[#7c3aed] bg-clip-text text-transparent mb-2">
+              1+
+            </h3>
+            <p class="text-[#64748b] font-medium">{{ 'about.yearsLearning' | translate }}</p>
           </div>
+
         </div>
       </div>
     </div>
