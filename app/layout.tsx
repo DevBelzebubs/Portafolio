@@ -47,7 +47,7 @@ export default function RootLayout({
           <main className="relative pt-16 md:pl-64 h-dvh overflow-y-auto overscroll-contain">
             <div className="absolute inset-0 grid-bg opacity-50 pointer-events-none -z-10"></div>
             <div className="absolute inset-0 scanline pointer-events-none mix-blend-overlay -z-10"></div>
-            <div className="max-w-7xl mx-auto p-6 lg:p-12 pb-24 min-h-dvh">
+            <div className="max-w-7xl mx-auto p-6 lg:p-12 pb-24 min-h-full">
               {children}
             </div>
           </main>

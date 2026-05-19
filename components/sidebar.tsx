@@ -12,7 +12,7 @@ export default function Sidebar() {
     { href: "/", icon: "rebase_edit", label: t("sidebar.infrastructure") },
     { href: "/schematics", icon: "account_tree", label: t("sidebar.schematics") },
     { href: "/logs", icon: "receipt_long", label: t("sidebar.logs") },
-    { href: "/core", icon: "memory", label: t("sidebar.coreInit") },
+    { href: "/init-core", icon: "memory", label: t("sidebar.coreInit") },
   ];
 
   return (
