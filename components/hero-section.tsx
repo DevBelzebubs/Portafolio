@@ -31,7 +31,6 @@ export default function HeroSection() {
             </button>
           </div>
         </div>
-        <StatusCard />
       </div>
     </section>
   );

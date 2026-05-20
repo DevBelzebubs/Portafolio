@@ -5,7 +5,8 @@ import Education from "@/components/core/education";
 import Blueprint from "@/components/core/blueprint";
 import TerminalForm from "@/components/core/terminal-form";
 import ExternalNodes from "@/components/core/external-nodes";
-
+import AudioDaemon from "@/components/audio-daemon";
+import SysBackup from "@/components/sys-backup";
 export default function CorePage() {
   return (
     <section className="snap-start">

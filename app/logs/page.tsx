@@ -16,7 +16,6 @@ export default function LogsPage() {
       <LogsPageHeader />
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
         <div className="hidden md:block absolute top-0 bottom-0 left-[50%] w-px bg-outline-variant/10 -z-10"></div>
-
         <FullCard
           refId={w.ref1}
           title={w.title1}
@@ -71,6 +70,14 @@ export default function LogsPage() {
           icon="terminal"
           description={p.desc3}
           tags={p.tags3}
+        />
+        <FullCard
+          refId={p.ref4}
+          title={p.title4}
+          subtitle={p.sub4}
+          metrics={p.metrics4}
+          description={p.desc4}
+          tags={p.tags4}
         />
       </div>
     </section>

@@ -37,7 +37,6 @@ export default function ScrollNavigation() {
       setShowDown(atBottom && currentIndex < ROUTE_ORDER.length - 1);
     };
 
-    // Usamos MutationObserver para reaccionar fiablemente cuando Next.js inyecta la nueva sección (como /schematics que no tiene scroll)
     const observer = new MutationObserver(() => checkScroll());
     observer.observe(main, { childList: true, subtree: true });
 

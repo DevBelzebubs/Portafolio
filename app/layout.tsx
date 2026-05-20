@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "JDGR // Portfolio",
-  description: "Senior Software Architect specializing in high-performance backends, microservices, and modular schematics.",
+  description: "Junior Software Developer specializing in high-performance backends, microservices, and modular schematics.",
 };
 
 export default function RootLayout({
