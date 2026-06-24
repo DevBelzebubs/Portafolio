@@ -3,10 +3,13 @@ import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/contexts/language-context";
 
 export default function AudioDaemon() {
-  const { language } = useLanguage();
+  const { lang } = useLanguage();
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const [barHeights] = useState(() =>
+    Array.from({ length: 12 }, () => Math.random())
+  );
   
   // 1. Define tu lista de reproducción (Playlist) aquí
   const playlist = [
@@ -20,9 +23,8 @@ export default function AudioDaemon() {
     en: { subtitle: "BACKGROUND_PROCESS" },
     fr: { subtitle: "PROCESSUS_EN_ARRIÈRE_PLAN" }
   };
-  const t = text[language as keyof typeof text] || text.es;
+  const t = text[lang as keyof typeof text] || text.es;
 
-  // Manejador de Play/Pause
   const togglePlay = () => {
     if (audioRef.current) {
       if (isPlaying) {
@@ -107,7 +109,7 @@ export default function AudioDaemon() {
                 key={i} 
                 className="w-1 bg-tertiary/60 rounded-t-sm transition-all duration-150"
                 style={{
-                  height: isPlaying ? `${Math.max(20, Math.random() * 100)}%` : '20%'
+                    height: isPlaying ? `${Math.max(20, barHeights[i] * 100)}%` : '20%'
                 }}
               />
             ))}

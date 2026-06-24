@@ -2,7 +2,7 @@
 import { useLanguage } from "@/contexts/language-context";
 
 export default function SysBackup() {
-  const { language } = useLanguage();
+  const { lang } = useLanguage();
   const text = {
     es: {
       title: "EXPORTAR_DATOS",
@@ -23,7 +23,7 @@ export default function SysBackup() {
       btn: "EXÉCUTER TÉLÉCHARGEMENT"
     }
   };
-  const t = text[language as keyof typeof text] || text.es;
+  const t = text[lang as keyof typeof text] || text.es;
 
   return (
     <div className="bg-surface-container-low border border-outline-variant/30 p-6 flex flex-col relative group overflow-hidden">
