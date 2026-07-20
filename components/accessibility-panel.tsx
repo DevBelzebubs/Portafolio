@@ -2,32 +2,7 @@
 
 import { useAccessibility } from "@/contexts/accessibility-context";
 import { useLanguage } from "@/contexts/language-context";
-import { useAudioPlayer, type Track } from "@/hooks/use-audio-player";
-
-const playlist = [
-  { title: "Clarion - Taxidermy", src: "/audio/Clarion%20-%20Taxidermy.mp3" },
-  { title: "Deftones - Acid Hologram", src: "/audio/Deftones%20-%20Acid%20Hologram.mp3" },
-  { title: "Deftones - Battle-axe", src: "/audio/Deftones%20-%20Battle-axe.mp3" },
-  { title: "Deftones - Gauze", src: "/audio/Deftones%20-%20Gauze.mp3" },
-  { title: "Deftones - Hearts/Wires", src: "/audio/Deftones%20-%20Hearts%20Wires.mp3" },
-  { title: "Deftones - Infinite/source", src: "/audio/Deftones%20-%20Infinite%20source.mp3" },
-  { title: "Deftones - Prayers/Triangles", src: "/audio/Deftones%20-%20Prayers%20Triangles.mp3" },
-  { title: "Deftones - Rivière", src: "/audio/Deftones%20-%20Rivi%C3%A8re.mp3" },
-  { title: "Deftones - Sextape", src: "/audio/Deftones%20-%20Sextape.mp3" },
-  { title: "Deftones - Xerces", src: "/audio/Deftones%20-%20Xerces.mp3" },
-  { title: "GunsLikeGirls - Hand Control", src: "/audio/GunsLikeGirls%20-%20Hand%20Control.mp3" },
-  { title: "My Chemical Romance - Drowning Lessons", src: "/audio/My%20Chemical%20Romance%20-%20Drowning%20Lessons.mp3" },
-  { title: "My Chemical Romance - The Ghost of You", src: "/audio/My%20Chemical%20Romance%20-%20The%20Ghost%20of%20You.mp3" },
-  { title: "My Chemical Romance - To the End", src: "/audio/My%20Chemical%20Romance%20-%20To%20the%20End.mp3" },
-  { title: "Pierce The Veil - Circles", src: "/audio/Pierce%20The%20Veil%20-%20Circles.mp3" },
-  { title: "Pierce The Veil - Disasterology", src: "/audio/Pierce%20The%20Veil%20-%20Disasterology.mp3" },
-  { title: "Quannic - soil", src: "/audio/Quannic%20-%20soil.mp3" },
-  { title: "Roving - Midnight Shimmer", src: "/audio/Roving%20-%20Midnight%20Shimmer.mp3" },
-  { title: "Silverstein - Smile In Your Sleep", src: "/audio/Silverstein%20-%20Smile%20In%20Your%20Sleep.mp3" },
-  { title: "Violent Vira - Common Decency", src: "/audio/Violent%20Vira%20-%20Common%20Decency.mp3" },
-  { title: "Violent Vira - Frailty", src: "/audio/Violent%20Vira%20-%20Frailty.mp3" },
-  { title: "Violent Vira - Tarantula Girl", src: "/audio/Violent%20Vira%20-%20Tarantula%20Girl.mp3" },
-];
+import { useAudio, playlist } from "@/contexts/audio-context";
 
 const text = {
   es: { title: "ACCESIBILIDAD", fontSize: "TAMAÑO", small: "A-", medium: "A", large: "A+", fontFamily: "TIPOGRAFÍA", sans: "Sans", mono: "Mono", contrast: "CONTRASTE", normal: "Normal", high: "Alto", music: "MÚSICA", nowPlaying: "AHORA SUENA", shuffle: "ALEATORIO", sequential: "SECUENCIAL", playlist: "PLAYLIST", volume: "VOLUMEN" },
@@ -35,7 +10,8 @@ const text = {
   fr: { title: "ACCESSIBILITÉ", fontSize: "TAILLE", small: "A-", medium: "A", large: "A+", fontFamily: "POLICE", sans: "Sans", mono: "Mono", contrast: "CONTRASTE", normal: "Normal", high: "Élevé", music: "MUSIQUE", nowPlaying: "EN COURS", shuffle: "ALÉATOIRE", sequential: "SÉQUENTIEL", playlist: "PLAYLIST", volume: "VOLUME" },
 };
 
-function PanelContent({ onClose, player }: { onClose: () => void; player: ReturnType<typeof useAudioPlayer> }) {
+function PanelContent({ onClose }: { onClose: () => void }) {
+  const player = useAudio();
   const { fontSize, fontFamily, highContrast, setFontSize, setFontFamily, setHighContrast } = useAccessibility();
   const { lang } = useLanguage();
   const t = text[lang as keyof typeof text] || text.en;
@@ -215,19 +191,9 @@ function PanelContent({ onClose, player }: { onClose: () => void; player: Return
 
 export default function AccessibilityPanel() {
   const { isPanelOpen, togglePanel, setPanelOpen } = useAccessibility();
-  const player = useAudioPlayer(playlist);
 
   return (
     <>
-      <audio
-        ref={player.audioRef}
-        src={playlist[player.currentTrack].src}
-        onTimeUpdate={player.handleTimeUpdate}
-        onEnded={player.handleEnded}
-        onLoadedMetadata={player.handleTimeUpdate}
-        preload="metadata"
-      />
-
       {isPanelOpen && (
         <div
           className="fixed inset-0 z-[99] bg-black/40 animate-in fade-in duration-300"
@@ -254,14 +220,14 @@ export default function AccessibilityPanel() {
               <span className="material-symbols-outlined">settings_accessibility</span>
             </button>
           ) : (
-            <PanelContent onClose={() => setPanelOpen(false)} player={player} />
+            <PanelContent onClose={() => setPanelOpen(false)} />
           )}
         </div>
       </div>
 
       {isPanelOpen && (
         <div className="hidden md:block fixed left-64 bottom-8 z-[100] w-80 max-h-[80vh] bg-surface-container-low border border-outline-variant/20 shadow-2xl transition-all duration-200">
-          <PanelContent onClose={() => setPanelOpen(false)} player={player} />
+          <PanelContent onClose={() => setPanelOpen(false)} />
         </div>
       )}
     </>

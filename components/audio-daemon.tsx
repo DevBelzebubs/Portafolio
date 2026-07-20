@@ -1,22 +1,14 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { useLanguage } from "@/contexts/language-context";
+import { useAudio } from "@/contexts/audio-context";
 
 export default function AudioDaemon() {
   const { lang } = useLanguage();
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTrack, setCurrentTrack] = useState(0);
-  const audioRef = useRef<HTMLAudioElement>(null);
+  const { playlist, currentTrack, isPlaying, togglePlay, nextTrack, prevTrack } = useAudio();
   const [barHeights] = useState(() =>
     Array.from({ length: 12 }, () => Math.random())
   );
-  
-  // 1. Define tu lista de reproducción (Playlist) aquí
-  const playlist = [
-    { title: "Tornado of Souls - Remastered", src: "/audio/tornado.mp3" },
-    { title: "Holy Wars... The Punishment Due", src: "/audio/holywars.mp3" },
-    { title: "A Fine Day to Die", src: "/audio/afineday.mp3" }
-  ];
 
   const text = {
     es: { subtitle: "PROCESO_EN_SEGUNDO_PLANO" },
@@ -25,40 +17,8 @@ export default function AudioDaemon() {
   };
   const t = text[lang as keyof typeof text] || text.es;
 
-  const togglePlay = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  const nextTrack = () => {
-    setCurrentTrack((prev) => (prev + 1) % playlist.length);
-  };
-
-  const prevTrack = () => {
-    setCurrentTrack((prev) => (prev - 1 + playlist.length) % playlist.length);
-  };
-
-  useEffect(() => {
-    if (isPlaying && audioRef.current) {
-      audioRef.current.play().catch(e => console.log("Reproducción bloqueada por el navegador", e));
-    }
-  }, [currentTrack, isPlaying]);
-
   return (
     <div className="bg-surface-container-low border border-outline-variant/30 p-6 flex flex-col relative group overflow-hidden rounded-2xl">
-      <audio 
-        ref={audioRef} 
-        src={playlist[currentTrack].src} 
-        onEnded={nextTrack}
-        preload="metadata" 
-      />
-
       <div className="absolute top-0 left-0 w-full h-1 bg-tertiary/20 group-hover:bg-tertiary/40 transition-colors" />
       
       <h3 className="text-sm font-medium text-tertiary mb-4 tracking-wider flex items-center justify-between font-mono w-full">

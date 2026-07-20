@@ -77,9 +77,11 @@ export function useAudioPlayer(playlist: Track[]) {
 
   const seek = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!audioRef.current || !duration) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const pct = (e.clientX - rect.left) / rect.width;
-    audioRef.current.currentTime = pct * duration;
+    try {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const pct = (e.clientX - rect.left) / rect.width;
+      audioRef.current.currentTime = pct * duration;
+    } catch {}
   };
 
   const formatTime = (s: number) => {
