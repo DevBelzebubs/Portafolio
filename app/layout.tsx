@@ -4,7 +4,9 @@ import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 import Footer from "@/components/footer";
 import ScrollNavigation from "@/components/scroll-navigation";
+import AccessibilityPanel from "@/components/accessibility-panel";
 import { LanguageProvider } from "@/contexts/language-context";
+import { AccessibilityProvider } from "@/contexts/accessibility-context";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -41,17 +43,20 @@ export default function RootLayout({
       </head>
       <body className="overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
         <LanguageProvider>
-          <Header />
-          <Sidebar />
-          <ScrollNavigation />
-          <main className="relative pt-16 md:pl-64 h-dvh overflow-y-auto overscroll-contain">
-            <div className="absolute inset-0 grid-bg opacity-50 pointer-events-none -z-10"></div>
-            <div className="absolute inset-0 scanline pointer-events-none mix-blend-overlay -z-10"></div>
-            <div className="max-w-7xl mx-auto p-6 lg:p-12 pb-24 min-h-full">
-              {children}
-            </div>
-          </main>
-          <Footer />
+          <AccessibilityProvider>
+            <Header />
+            <Sidebar />
+            <ScrollNavigation />
+            <main className="relative pt-16 md:pl-64 h-dvh overflow-y-auto overscroll-contain">
+              <div className="absolute inset-0 grid-bg opacity-50 pointer-events-none -z-10"></div>
+              <div className="absolute inset-0 scanline pointer-events-none mix-blend-overlay -z-10"></div>
+              <div className="max-w-7xl mx-auto p-6 lg:p-12 pb-24 min-h-full">
+                {children}
+              </div>
+            </main>
+            <Footer />
+            <AccessibilityPanel />
+          </AccessibilityProvider>
         </LanguageProvider>
       </body>
     </html>

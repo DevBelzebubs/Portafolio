@@ -1,6 +1,7 @@
 import AudioDaemon from "@/components/audio-daemon";
 import HeroSection from "@/components/hero-section";
 import StatusCard from "@/components/status-card";
+import StatsCard from "@/components/stats-card";
 import SysBackup from "@/components/sys-backup";
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
       </div>
       <div className="lg:col-span-4 flex flex-col gap-6 h-full">
         <StatusCard />
-        <AudioDaemon />
+        <StatsCard />
         <SysBackup />
       </div>
     </div>

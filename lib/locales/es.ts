@@ -39,6 +39,13 @@ const es = {
     throughput: "PROYECTOS:",
     throughputVal: "5+",
   },
+  statsCard: {
+    title: "RÁPIDAS",
+    experience: { label: "EXPERIENCIA", value: "2+ AÑOS" },
+    projects: { label: "PROYECTOS", value: "5+ ENTREGADOS" },
+    stack: { label: "STACK PRINCIPAL", value: "JAVA / TS / SPRING / NEST" },
+    languages: { label: "IDIOMAS", value: "ES (NATIVO) / EN (B1)" },
+  },
   logs: {
     header: {
       command: "> EJECUTAR: CONSULTAR_EXPERIENCIA",

@@ -39,6 +39,13 @@ const fr: Record<string, any> = {
     throughput: "PROJETS:",
     throughputVal: "5+",
   },
+  statsCard: {
+    title: "RAPIDES",
+    experience: { label: "EXPÉRIENCE", value: "2+ ANS" },
+    projects: { label: "PROJETS", value: "5+ LIVRÉS" },
+    stack: { label: "STACK PRINCIPAL", value: "JAVA / TS / SPRING / NEST" },
+    languages: { label: "LANGUES", value: "ES (NATIF) / EN (B1)" },
+  },
   logs: {
     header: {
       command: "> EXÉCUTER: CONSULTER_EXPÉRIENCE",

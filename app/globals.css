@@ -112,3 +112,43 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #2e5bff;
 }
+
+/* ACCESSIBILITY: Font Size */
+.font-size-sm {
+  --font-scale: 0.875;
+}
+.font-size-base {
+  --font-scale: 1;
+}
+.font-size-lg {
+  --font-scale: 1.125;
+}
+
+/* ACCESSIBILITY: Font Family */
+.font-family-sans body,
+.font-family-sans .font-headline,
+.font-family-sans .font-body {
+  font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif !important;
+}
+.font-family-mono body,
+.font-family-mono .font-headline,
+.font-family-mono .font-body {
+  font-family: var(--font-jetbrains-mono), "JetBrains Mono", monospace !important;
+}
+
+/* ACCESSIBILITY: High Contrast */
+.high-contrast {
+  --color-primary: #ffffff;
+  --color-primary-container: #4169e1;
+  --color-on-surface: #ffffff;
+  --color-on-surface-variant: #f0f0f0;
+  --color-outline: #ffffff;
+  --color-outline-variant: #999999;
+  --color-tertiary: #ffd700;
+}
+.high-contrast .grid-bg {
+  opacity: 0.15 !important;
+}
+.high-contrast .scanline {
+  opacity: 0.3 !important;
+}
