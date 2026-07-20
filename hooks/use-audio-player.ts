@@ -65,13 +65,15 @@ export function useAudioPlayer(playlist: Track[]) {
     }
   }, [volume]);
 
-  const handleTimeUpdate = () => {
+  const handleTimeUpdate = useCallback(() => {
     if (!audioRef.current) return;
     setProgress(audioRef.current.currentTime);
     setDuration(audioRef.current.duration || 0);
-  };
+  }, []);
 
-  const handleEnded = () => nextTrack();
+  const handleEnded = useCallback(() => {
+    nextTrack();
+  }, [nextTrack]);
 
   const seek = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!audioRef.current || !duration) return;
