@@ -79,6 +79,14 @@ export default function LogsPage() {
           description={p.desc4}
           tags={p.tags4}
         />
+        <HalfCard
+          refId={p.ref5}
+          title={p.title5}
+          subtitle={p.sub5}
+          icon="science"
+          description={p.desc5}
+          tags={p.tags5}
+        />
       </div>
     </section>
   );
