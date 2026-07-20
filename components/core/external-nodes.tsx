@@ -11,7 +11,7 @@ export default function ExternalNodes() {
         {t("core.externalNodes.title")}
       </h3>
       <div className="grid grid-cols-2 gap-4">
-        <a className="flex flex-col p-4 border border-outline-variant/20 hover:border-primary hover:bg-primary/5 transition-all group" href="#">
+        <a className="flex flex-col p-4 border border-outline-variant/20 hover:border-primary hover:bg-primary/5 transition-all group" href="https://www.linkedin.com/in/juan-diego-gabriel-rios-69444a263/" target="_blank" rel="noopener noreferrer">
           <div className="flex justify-between items-start mb-4">
             <span className="material-symbols-outlined text-outline group-hover:text-primary transition-colors">work</span>
             <span className="w-1.5 h-1.5 bg-outline group-hover:bg-primary shadow-[0_0_5px_rgba(46,91,255,0)] group-hover:shadow-[0_0_8px_rgba(46,91,255,0.6)]"></span>
@@ -19,7 +19,7 @@ export default function ExternalNodes() {
           <span className="font-bold text-sm text-on-surface">{t("core.externalNodes.linkedin")}</span>
           <span className="font-mono text-[9px] text-outline mt-1">{t("core.externalNodes.linkedinSub")}</span>
         </a>
-        <a className="flex flex-col p-4 border border-outline-variant/20 hover:border-tertiary hover:bg-tertiary/5 transition-all group" href="#">
+        <a className="flex flex-col p-4 border border-outline-variant/20 hover:border-tertiary hover:bg-tertiary/5 transition-all group" href="https://github.com/DevBelzebubs" target="_blank" rel="noopener noreferrer">
           <div className="flex justify-between items-start mb-4">
             <span className="material-symbols-outlined text-outline group-hover:text-tertiary transition-colors">code</span>
             <span className="w-1.5 h-1.5 bg-outline group-hover:bg-tertiary shadow-[0_0_5px_rgba(255,186,32,0)] group-hover:shadow-[0_0_8px_rgba(255,186,32,0.6)]"></span>

@@ -46,8 +46,8 @@ export default function SysBackup() {
         </div>
         
         <a 
-          href="/CV_Juan_Diego.pdf" 
-          download="CV_Juan_Diego_Ingeniero_Software.pdf"
+          href="/documents/CV-Juan_Diego_Gabriel_Rios.pdf" 
+          download="CV-Juan_Diego_Gabriel_Rios.pdf"
           className="w-full flex items-center justify-between bg-primary/10 hover:bg-primary/20 border border-primary/30 text-primary px-4 py-3 transition-all duration-300 group/btn hover:shadow-[0_0_15px_rgba(46,91,255,0.15)] active:scale-95 cursor-pointer select-none"
         >
           <span className="font-mono text-sm font-bold tracking-widest">{t.btn}</span>

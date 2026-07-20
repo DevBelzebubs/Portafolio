@@ -22,14 +22,14 @@ export default function HeroSection() {
           <p className="font-body text-on-surface-variant text-lg md:text-xl max-w-2xl border-l-2 border-outline-variant/30 pl-6 py-2">
             {t("hero.description")}
           </p>
-          <div className="mt-12 flex flex-wrap gap-4">
+          {/* <div className="mt-12 flex flex-wrap gap-4"> 
             <button className="bg-primary-container text-on-primary-container px-8 py-3 font-label text-sm uppercase hover:bg-primary-container/90 border-b-2 border-transparent hover:border-tertiary transition-all">
               {t("hero.btnDeploy")}
             </button>
             <button className="px-8 py-3 font-label text-sm uppercase text-primary border border-outline-variant/20 hover:bg-primary/10 transition-colors">
               {t("hero.btnLogs")}
             </button>
-          </div>
+          {/*</div>*/ }
         </div>
       </div>
     </section>
