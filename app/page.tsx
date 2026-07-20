@@ -1,8 +1,8 @@
-import AudioDaemon from "@/components/audio-daemon";
+import AudioDaemon from "@/components/shared/audio-daemon";
 import HeroSection from "@/components/hero-section";
 import StatusCard from "@/components/status-card";
 import StatsCard from "@/components/stats-card";
-import SysBackup from "@/components/sys-backup";
+import SysBackup from "@/components/shared/sys-backup";
 
 export default function Home() {
   return (

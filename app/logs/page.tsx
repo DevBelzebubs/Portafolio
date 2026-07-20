@@ -2,20 +2,23 @@
 
 import { useLanguage } from "@/contexts/language-context";
 import LogsPageHeader from "@/components/logs/page-header";
-import SectionDivider from "@/components/logs/section-divider";
-import FullCard from "@/components/logs/full-card";
-import HalfCard from "@/components/logs/half-card";
+import SectionDivider from "@/components/shared/section-divider";
+import FullCard from "@/components/shared/full-card";
+import HalfCard from "@/components/shared/half-card";
 
 export default function LogsPage() {
   const { t, tObj } = useLanguage();
   const w = tObj("logs.work") as any;
   const p = tObj("logs.projects") as any;
+  const r = tObj("logs.research") as any;
 
   return (
     <section>
       <LogsPageHeader />
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
         <div className="hidden md:block absolute top-0 bottom-0 left-[50%] w-px bg-outline-variant/10 -z-10"></div>
+
+        {/* === WORK SECTION === */}
         <FullCard
           refId={w.ref1}
           title={w.title1}
@@ -41,6 +44,7 @@ export default function LogsPage() {
           tags={w.tags3}
         />
 
+        {/* === PROJECTS SECTION === */}
         <SectionDivider
           refId={p.sectionRef}
           title={p.sectionTitle}
@@ -71,21 +75,21 @@ export default function LogsPage() {
           description={p.desc3}
           tags={p.tags3}
         />
-        <FullCard
-          refId={p.ref4}
-          title={p.title4}
-          subtitle={p.sub4}
-          metrics={p.metrics4}
-          description={p.desc4}
-          tags={p.tags4}
+
+        {/* === RESEARCH SECTION === */}
+        <SectionDivider
+          refId={r.sectionRef}
+          title={r.sectionTitle}
+          subtitle={r.sectionSub}
         />
+
         <HalfCard
-          refId={p.ref5}
-          title={p.title5}
-          subtitle={p.sub5}
+          refId={r.ref}
+          title={r.title}
+          subtitle={r.sub}
           icon="science"
-          description={p.desc5}
-          tags={p.tags5}
+          description={r.desc}
+          tags={r.tags}
         />
       </div>
     </section>

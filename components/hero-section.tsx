@@ -1,7 +1,6 @@
 "use client";
 
 import { useLanguage } from "@/contexts/language-context";
-import StatusCard from "./status-card";
 
 export default function HeroSection() {
   const { t } = useLanguage();
