@@ -6,7 +6,7 @@ import SysBackup from "@/components/sys-backup";
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-4 lg:grid-cols-14 gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-14 gap-6">
       <div className="lg:col-span-9">
         <HeroSection />
       </div>

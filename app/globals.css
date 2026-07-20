@@ -114,6 +114,9 @@ body {
 }
 
 /* ACCESSIBILITY: Font Size */
+html {
+  font-size: calc(16px * var(--font-scale, 1));
+}
 .font-size-sm {
   --font-scale: 0.875;
 }

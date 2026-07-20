@@ -3,10 +3,12 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/language-context";
+import { useAccessibility } from "@/contexts/accessibility-context";
 
 export default function Sidebar() {
   const pathname = usePathname();
   const { t } = useLanguage();
+  const { togglePanel, isPanelOpen } = useAccessibility();
 
   const navItems = [
     { href: "/", icon: "rebase_edit", label: t("sidebar.infrastructure") },
@@ -44,9 +46,16 @@ export default function Sidebar() {
         </ul>
       </div>
       <div className="px-6 w-full">
-        <button className="w-full border border-outline-variant text-on-surface hover:bg-primary/10 font-mono text-[10px] tracking-widest py-3 flex items-center justify-center gap-2 transition-colors">
-          <span className="material-symbols-outlined text-sm">hub</span>
-          {t("sidebar.connectNodes")}
+        <button
+          onClick={togglePanel}
+          className={`w-full border font-mono text-[10px] tracking-widest py-3 flex items-center justify-center gap-2 transition-colors ${
+            isPanelOpen
+              ? "bg-primary-container/20 border-primary-container text-primary-container"
+              : "border-outline-variant text-on-surface hover:bg-primary/10"
+          }`}
+        >
+          <span className="material-symbols-outlined text-sm">settings_accessibility</span>
+          ACCESIBILIDAD
         </button>
       </div>
     </nav>
