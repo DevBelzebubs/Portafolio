@@ -92,7 +92,7 @@ const en: Record<string, any> = {
       metrics1: [
         { label: "STARS:", value: "—" },
         { label: "FORKS:", value: "—" },
-        { label: "STATUS:", value: "PRODUCTION" },
+        { label: "STATUS:", value: "STABLE" },
       ],
 
       ref2: "REF_ID: 006 // E-COMMERCE",
@@ -200,6 +200,229 @@ const en: Record<string, any> = {
       linkedinSub: "PROFESSIONAL_GRAPH",
       github: "GitHub",
       githubSub: "CODE_REPOSITORY",
+    },
+  },
+  projectDetail: {
+    back: "BACK_TO_LOGS",
+    objectives: "CORE_OBJECTIVES",
+    challenges: "TECHNICAL_CHALLENGES",
+    metrics: "PROJECT_METRICS",
+    resources: "RESOURCES",
+    sourceCode: "SOURCE_CODE",
+    liveDemo: "LIVE_DEMO",
+    statusProduction: "STATUS: PRODUCTION",
+    statusStable: "STATUS: STABLE",
+    healthNominal: "NOMINAL_OPERATIONS",
+    healthStatus: "HEALTH_STATUS",
+    terminalRecv: "TERMINAL_RECV",
+    cpuUsage: "CPU_USAGE",
+    systemSpec: "SYSTEM_SPEC",
+    securityProtocol: "SECURITY_PROTOCOL",
+    deployment: "DEPLOYMENT",
+    uptime: "UPTIME",
+    stack: "STACK",
+    arch: "ARCHITECTURE",
+    containers: "CONTAINERS",
+    topology: "Visualizing Core Infrastructure Topology",
+    projects: {
+      "payflow-platform": {
+        heroDescription:
+          "High-availability e-commerce platform designed for high-volume transactions. Distributed microservices system with asynchronous messaging, transactional persistence, and SSR frontend optimized for conversion.",
+        deployment: "PRODUCTION // V.1.0",
+        objectives: [
+          {
+            id: "01",
+            title: "Secure Payment Flow",
+            description:
+              "Implementation of an end-to-end encrypted transaction pipeline with asynchronous validation to guarantee financial integrity in every operation.",
+          },
+          {
+            id: "02",
+            title: "Real-Time Shopping Cart",
+            description:
+              "Global cart state management with cross-tab synchronization and server persistence, supporting thousands of concurrent products.",
+          },
+          {
+            id: "03",
+            title: "Microservices Architecture",
+            description:
+              "Decoupled services based on DDD with asynchronous messaging via message queues, enabling independent domain scaling.",
+          },
+          {
+            id: "04",
+            title: "Optimized SSR Frontend",
+            description:
+              "Server-Side Rendering with Next.js for SEO and performance, combined with Tailwind CSS for a responsive and fast interface.",
+          },
+        ],
+        challenges: [
+          {
+            id: "01",
+            title: "Distributed Transactional Consistency",
+            description:
+              "Handling transactions that span multiple payment and inventory services. Implementation of Saga patterns and compensation to ensure atomicity without tight coupling.",
+          },
+          {
+            id: "02",
+            title: "API Gateway Routing",
+            description:
+              "Design of a centralized gateway handling authentication, rate limiting, and load balancing across 8+ microservices with sub-50ms latency.",
+          },
+          {
+            id: "03",
+            title: "Inventory Synchronization",
+            description:
+              "Maintaining real-time stock consistency during high-concurrency events. Implementation of optimistic locking and distributed caching.",
+          },
+        ],
+        metrics: {
+          uptime: "99.99%",
+          stack: "Next.js / Node.js / SQL",
+          arch: "Hexagonal / DDD",
+          containers: "8 Microservices",
+        },
+        terminalLines: [
+          "> INIT_PAYFLOW_SERVICES... [OK]",
+          "> CONNECTING_API_GATEWAY... [OK]",
+          "> POLLING_MICROSERVICES...",
+          "> SYNC_INVENTORY_STATE... [DONE]",
+          "> PAYMENT_PIPELINE_READY",
+          "> LOAD_BALANCER: 8 NODES ACTIVE",
+          "> PAYFLOW_ECOMMERCE_V1_LOADED.",
+        ],
+      },
+      "pgt-warehouse-system": {
+        heroDescription:
+          "High-availability enterprise system designed for large-scale logistics and warehouse management. Spring Cloud ecosystem with service orchestration, transactional persistence, and modular frontend for real-time inventory operations.",
+        deployment: "STABLE // V.2.1",
+        objectives: [
+          {
+            id: "01",
+            title: "Kardex Inventory Management",
+            description:
+              "Comprehensive inventory control system with full traceability of entries, exits, and internal movements. Automatic average cost calculation and stock rotation reports.",
+          },
+          {
+            id: "02",
+            title: "Optimized Picking Routes",
+            description:
+              "Picking route optimization algorithms that reduce order preparation time in high-complexity warehouses.",
+          },
+          {
+            id: "03",
+            title: "Role-Based Security",
+            description:
+              "Full RBAC with JWT interceptors in Angular and permission validation in every microservice. Granular access control per module and operation.",
+          },
+          {
+            id: "04",
+            title: "Spring Cloud Orchestration",
+            description:
+              "Orchestrated ecosystem with Eureka Discovery for service registration, Config Server for centralized configuration, and API Gateway for routing.",
+          },
+        ],
+        challenges: [
+          {
+            id: "01",
+            title: "Spring Microservices Ecosystem",
+            description:
+              "Configuration and orchestration of 6+ microservices with Spring Cloud, including discovery, centralized config, gateway, and circuit breakers for resilience.",
+          },
+          {
+            id: "02",
+            title: "Distributed Inventory Consistency",
+            description:
+              "Maintaining ACID consistency in inventory operations across multiple services. Implementation of distributed transactions and pessimistic locking.",
+          },
+          {
+            id: "03",
+            title: "Modular Frontend-Backend Integration",
+            description:
+              "Efficient communication between the modular Angular frontend and the microservices backend, with error handling, automatic retry, and static data caching.",
+          },
+        ],
+        metrics: {
+          uptime: "99.95%",
+          stack: "Spring Boot / Angular / SQL",
+          arch: "Hexagonal / Microservices",
+          containers: "6 Active Clusters",
+        },
+        terminalLines: [
+          "> INIT_PGT_SERVICES... [OK]",
+          "> EUREKA_DISCOVERY: REGISTERED... [OK]",
+          "> CONFIG_SERVER: LOADED... [OK]",
+          "> API_GATEWAY: ROUTING...",
+          "> SPRING_CLOUD_V2_LOADED.",
+          "> HEXAGONAL_ARCH: STRICT_MODE",
+          "> SYSTEM_READY.",
+        ],
+      },
+      "flare-social-app": {
+        heroDescription:
+          "Native Android social media application with clean architecture and hybrid persistence. Designed for scalability and maintainability with strict layer separation, MVVM pattern, and declarative UI composition.",
+        deployment: "STABLE // V.1.0",
+        objectives: [
+          {
+            id: "01",
+            title: "Strict Clean Architecture",
+            description:
+              "Implementation of the three fundamental layers (Presentation, Domain, Data) with unidirectional dependencies and interface-based decoupling.",
+          },
+          {
+            id: "02",
+            title: "Declarative UI with Compose",
+            description:
+              "Interface built entirely with Jetpack Compose, leveraging recomposition, state hoisting, and animations for a fluid native experience.",
+          },
+          {
+            id: "03",
+            title: "Hybrid Persistence",
+            description:
+              "Room Database for local caching with intelligent synchronization, combined with Cloudinary for cloud media management and optimization.",
+          },
+          {
+            id: "04",
+            title: "MVVM Pattern",
+            description:
+              "Reactive ViewModels with Kotlin Coroutines and Flow, managing UI state in a predictable and testable way.",
+          },
+        ],
+        challenges: [
+          {
+            id: "01",
+            title: "Offline-Online Synchronization",
+            description:
+              "Implementation of caching strategies with Room Database enabling full app usage offline, with automatic synchronization upon connectivity recovery.",
+          },
+          {
+            id: "02",
+            title: "Cloud Media Management",
+            description:
+              "Integration with Cloudinary for upload, transformation, and optimized delivery of images and videos, with adaptive compression based on network type.",
+          },
+          {
+            id: "03",
+            title: "Navigation Architecture",
+            description:
+              "Design of a complex navigation system with Compose Navigation supporting nested routes, deep linking, and animated transitions between screens.",
+          },
+        ],
+        metrics: {
+          uptime: "99.90%",
+          stack: "Kotlin / Compose / Room",
+          arch: "Clean Arch / MVVM",
+          containers: "N/A (Native)",
+        },
+        terminalLines: [
+          "> INIT_FLARE_APP... [OK]",
+          "> ROOM_DB: CONNECTED... [OK]",
+          "> CLOUDINARY: MEDIA_READY... [OK]",
+          "> FIREBASE_AUTH: INITIALIZED",
+          "> COMPOSE_UI: RECOMPOSITION_READY",
+          "> CLEAN_ARCH: LAYERS_VALIDATED",
+          "> FLARE_SOCIAL_V1_LOADED.",
+        ],
+      },
     },
   },
   language: {

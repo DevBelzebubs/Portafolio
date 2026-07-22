@@ -92,7 +92,7 @@ const fr: Record<string, any> = {
       metrics1: [
         { label: "ÉTOILES:", value: "—" },
         { label: "FORKS:", value: "—" },
-        { label: "STATUT:", value: "PRODUCTION" },
+        { label: "STATUT:", value: "STABLE" },
       ],
 
       ref2: "REF_ID: 006 // E-COMMERCE",
@@ -200,6 +200,229 @@ const fr: Record<string, any> = {
       linkedinSub: "GRAPHE_PROFESSIONNEL",
       github: "GitHub",
       githubSub: "DÉPÔT_CODE",
+    },
+  },
+  projectDetail: {
+    back: "RETOUR_AUX_JOURNAUX",
+    objectives: "OBJECTIFS_PRINCIPAUX",
+    challenges: "DÉFIS_TECHNIQUES",
+    metrics: "MÉTRIQUES_PROJET",
+    resources: "RESSOURCES",
+    sourceCode: "CODE_SOURCE",
+    liveDemo: "DÉMO_EN_LIGNE",
+    statusProduction: "STATUT: PRODUCTION",
+    statusStable: "STATUT: STABLE",
+    healthNominal: "OPÉRATIONS_NOMINALES",
+    healthStatus: "ÉTAT_DE_SANTÉ",
+    terminalRecv: "RÉCÉPTEUR_TERMINAL",
+    cpuUsage: "UTILISATION_CPU",
+    systemSpec: "SPÉC_SYSTÈME",
+    securityProtocol: "PROTOCOLE_SÉCURITÉ",
+    deployment: "DÉPLOIEMENT",
+    uptime: "TEMPS_ACTIVITÉ",
+    stack: "PILE_TECH",
+    arch: "ARCHITECTURE",
+    containers: "CONTENEURS",
+    topology: "Visualisation de la Topologie d'Infrastructures Core",
+    projects: {
+      "payflow-platform": {
+        heroDescription:
+          "Plateforme e-commerce haute disponibilité conçue pour les transactions à haut volume. Système distribué en microservices avec communication asynchrone via messagerie, persistance transactionnelle et frontend SSR optimisé pour la conversion.",
+        deployment: "PRODUCTION // V.1.0",
+        objectives: [
+          {
+            id: "01",
+            title: "Flux de Paiement Sécurisé",
+            description:
+              "Implémentation d'un pipeline de transactions chiffré de bout en bout avec validation asynchrone pour garantir l'intégrité financière à chaque opération.",
+          },
+          {
+            id: "02",
+            title: "Panier d'Achat en Temps Réel",
+            description:
+              "Gestion de l'état global du panier avec synchronisation entre onglets et persistance serveur, supportant des milliers de produits concurrents.",
+          },
+          {
+            id: "03",
+            title: "Architecture Microservices",
+            description:
+              "Services découplés basés sur le DDD avec communication asynchrone via files de messages, permettant une mise à l'échelle indépendante par domaine.",
+          },
+          {
+            id: "04",
+            title: "Frontend SSR Optimisé",
+            description:
+              "Server-Side Rendering avec Next.js pour le SEO et la performance, combiné à Tailwind CSS pour une interface réactive et rapide.",
+          },
+        ],
+        challenges: [
+          {
+            id: "01",
+            title: "Consistance Transactionnelle Distribuée",
+            description:
+              "Gestion des transactions traversant plusieurs services de paiement et d'inventaire. Implémentation de patterns Saga et compensation pour assurer l'atomicité sans couplage fort.",
+          },
+          {
+            id: "02",
+            title: "Routage API Gateway",
+            description:
+              "Conception d'un gateway centralisé gérant l'authentification, le rate limiting et l'équilibrage de charge entre plus de 8 microservices avec une latence sub-50ms.",
+          },
+          {
+            id: "03",
+            title: "Synchronisation d'Inventaire",
+            description:
+              "Maintien de la consistance du stock en temps réel lors d'événements haute concurrence. Implémentation de locking optimiste et cache distribué.",
+          },
+        ],
+        metrics: {
+          uptime: "99.99%",
+          stack: "Next.js / Node.js / SQL",
+          arch: "Hexagonale / DDD",
+          containers: "8 Microservices",
+        },
+        terminalLines: [
+          "> INIT_PAYFLOW_SERVICES... [OK]",
+          "> CONNECTING_API_GATEWAY... [OK]",
+          "> POLLING_MICROSERVICES...",
+          "> SYNC_INVENTORY_STATE... [DONE]",
+          "> PAYMENT_PIPELINE_READY",
+          "> LOAD_BALANCER: 8 NODES ACTIVE",
+          "> PAYFLOW_ECOMMERCE_V1_LOADED.",
+        ],
+      },
+      "pgt-warehouse-system": {
+        heroDescription:
+          "Système d'entreprise haute disponibilité conçu pour la gestion logistique et d'entrepôt à grande échelle. Écosystème Spring Cloud avec orchestration des services, persistance transactionnelle et frontend modulaire pour les opérations d'inventaire en temps réel.",
+        deployment: "STABLE // V.2.1",
+        objectives: [
+          {
+            id: "01",
+            title: "Gestion d'Inventaire Kardex",
+            description:
+              "Système complet de contrôle d'inventaire avec traçabilité des entrées, sorties et mouvements internes. Calcul automatique des coûts moyens et rapports de rotation de stock.",
+          },
+          {
+            id: "02",
+            title: "Itinéraires de Picking Optimisés",
+            description:
+              "Algorithmes d'optimisation des itinéraires de picking réduisant le temps de préparation des commandes dans les entrepôts haute complexité.",
+          },
+          {
+            id: "03",
+            title: "Sécurité Basée sur les Rôles",
+            description:
+              "RBAC complet avec intercepteurs JWT dans Angular et validation des permissions dans chaque microservice. Contrôle d'accès granulaire par module et opération.",
+          },
+          {
+            id: "04",
+            title: "Orchestration Spring Cloud",
+            description:
+              "Écosystème orchestré avec Eureka Discovery pour l'enregistrement des services, Config Server pour la configuration centralisée et API Gateway pour le routage.",
+          },
+        ],
+        challenges: [
+          {
+            id: "01",
+            title: "Écosystème Microservices Spring",
+            description:
+              "Configuration et orchestration de plus de 6 microservices avec Spring Cloud, incluant discovery, config centralisée, gateway et circuit breakers pour la résilience.",
+          },
+          {
+            id: "02",
+            title: "Consistance d'Inventaire Distribuée",
+            description:
+              "Maintien de la consistance ACID dans les opérations d'inventaire traversant plusieurs services. Implémentation de transactions distribuées et verrouillage pessimiste.",
+          },
+          {
+            id: "03",
+            title: "Intégration Frontend-Backend Modulaire",
+            description:
+              "Communication efficace entre le frontend Angular modulaire et le backend microservices, avec gestion des erreurs, retry automatique et cache de données statiques.",
+          },
+        ],
+        metrics: {
+          uptime: "99.95%",
+          stack: "Spring Boot / Angular / SQL",
+          arch: "Hexagonale / Microservices",
+          containers: "6 Clusters Actifs",
+        },
+        terminalLines: [
+          "> INIT_PGT_SERVICES... [OK]",
+          "> EUREKA_DISCOVERY: REGISTERED... [OK]",
+          "> CONFIG_SERVER: LOADED... [OK]",
+          "> API_GATEWAY: ROUTING...",
+          "> SPRING_CLOUD_V2_LOADED.",
+          "> HEXAGONAL_ARCH: STRICT_MODE",
+          "> SYSTEM_READY.",
+        ],
+      },
+      "flare-social-app": {
+        heroDescription:
+          "Application mobile native de réseau social pour Android avec architecture propre et persistance hybride. Conçue pour la scalabilité et la maintenabilité avec séparation strate des couches, pattern MVVM et composition déclarative de l'UI.",
+        deployment: "STABLE // V.1.0",
+        objectives: [
+          {
+            id: "01",
+            title: "Clean Architecture Stricte",
+            description:
+              "Implémentation des trois couches fondamentales (Présentation, Domaine, Données) avec dépendances unidirectionnelles et utilisation d'interfaces pour le découplage.",
+          },
+          {
+            id: "02",
+            title: "UI Déclarative avec Compose",
+            description:
+              "Interface construite entièrement avec Jetpack Compose, exploitant la recomposition, le state hoisting et les animations pour une expérience native fluide.",
+          },
+          {
+            id: "03",
+            title: "Persistance Hybride",
+            description:
+              "Room Database pour le cache local avec synchronisation intelligente, combiné à Cloudinary pour la gestion et l'optimisation des médias en nuage.",
+          },
+          {
+            id: "04",
+            title: "Pattern MVVM",
+            description:
+              "ViewModels réactifs avec Kotlin Coroutines et Flow, gérant l'état de l'UI de manière prévisible et testable.",
+          },
+        ],
+        challenges: [
+          {
+            id: "01",
+            title: "Synchronisation Hors-Ligne En-Ligne",
+            description:
+              "Implémentation de stratégies de cache avec Room Database permettant une utilisation complète de l'app hors ligne, avec synchronisation automatique lors de la récupération de la connectivité.",
+          },
+          {
+            id: "02",
+            title: "Gestion des Médias en Nuage",
+            description:
+              "Intégration avec Cloudinary pour l'upload, la transformation et la livraison optimisée d'images et vidéos, avec compression adaptative selon le type de réseau.",
+          },
+          {
+            id: "03",
+            title: "Architecture de Navigation",
+            description:
+              "Conception d'un système de navigation complexe avec Compose Navigation supportant les routes imbriquées, le deep linking et les transitions animées entre écrans.",
+          },
+        ],
+        metrics: {
+          uptime: "99.90%",
+          stack: "Kotlin / Compose / Room",
+          arch: "Clean Arch / MVVM",
+          containers: "N/A (Natif)",
+        },
+        terminalLines: [
+          "> INIT_FLARE_APP... [OK]",
+          "> ROOM_DB: CONNECTED... [OK]",
+          "> CLOUDINARY: MEDIA_READY... [OK]",
+          "> FIREBASE_AUTH: INITIALIZED",
+          "> COMPOSE_UI: RECOMPOSITION_READY",
+          "> CLEAN_ARCH: LAYERS_VALIDATED",
+          "> FLARE_SOCIAL_V1_LOADED.",
+        ],
+      },
     },
   },
   language: {

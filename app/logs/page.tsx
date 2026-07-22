@@ -58,6 +58,7 @@ export default function LogsPage() {
           description={p.desc1}
           tags={p.tags1}
           metrics={p.metrics1}
+          slug="pgt-warehouse-system"
         />
         <HalfCard
           refId={p.ref2}
@@ -66,6 +67,8 @@ export default function LogsPage() {
           icon="api"
           description={p.desc2}
           tags={p.tags2}
+          slug="payflow-platform"
+          statusText="PRODUCCIÓN"
         />
         <HalfCard
           refId={p.ref3}
@@ -74,6 +77,7 @@ export default function LogsPage() {
           icon="terminal"
           description={p.desc3}
           tags={p.tags3}
+          slug="flare-social-app"
         />
 
         {/* === RESEARCH SECTION === */}

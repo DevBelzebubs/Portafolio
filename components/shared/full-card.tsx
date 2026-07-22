@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "@/contexts/language-context";
 
 interface FullCardProps {
@@ -9,12 +10,13 @@ interface FullCardProps {
   description: string;
   tags: string[];
   metrics: { label: string; value: string; variant?: "tertiary" | "primary" }[];
+  slug?: string;
 }
 
-export default function FullCard({ refId, title, subtitle, description, tags, metrics }: FullCardProps) {
+export default function FullCard({ refId, title, subtitle, description, tags, metrics, slug }: FullCardProps) {
   const { t } = useLanguage();
 
-  return (
+  const content = (
     <article className="col-span-1 md:col-span-12 bg-surface-container-low relative group p-6 md:p-8 flex flex-col justify-between hover:bg-surface-container-high transition-colors duration-300 border-t border-outline-variant/15 snap-start min-h-[300px]">
       <div className="absolute top-0 left-0 w-full h-1 bg-surface-container-highest flex items-center px-4 gap-2">
         <div className="w-1.5 h-1.5 bg-primary-container opacity-60"></div>
@@ -51,4 +53,14 @@ export default function FullCard({ refId, title, subtitle, description, tags, me
       </div>
     </article>
   );
+
+  if (slug) {
+    return (
+      <Link href={`/projects/${slug}`} className="block col-span-1 md:col-span-12">
+        {content}
+      </Link>
+    );
+  }
+
+  return content;
 }

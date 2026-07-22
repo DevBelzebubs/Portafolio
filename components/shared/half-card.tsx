@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "@/contexts/language-context";
 
 interface HalfCardProps {
@@ -9,12 +10,14 @@ interface HalfCardProps {
   icon: string;
   description: string;
   tags: string[];
+  slug?: string;
+  statusText?: string;
 }
 
-export default function HalfCard({ refId, title, subtitle, icon, description, tags }: HalfCardProps) {
+export default function HalfCard({ refId, title, subtitle, icon, description, tags, slug, statusText }: HalfCardProps) {
   const { t } = useLanguage();
 
-  return (
+  const content = (
     <article className="col-span-1 md:col-span-6 bg-surface-container-low relative group p-6 flex flex-col justify-between hover:bg-surface-container-high transition-colors duration-300 border-t border-outline-variant/15 min-h-[320px] snap-start">
       <div className="absolute top-0 left-0 w-full h-1 bg-surface-container-highest flex items-center px-4 gap-2">
         <div className="w-1.5 h-1.5 bg-primary-container opacity-60"></div>
@@ -38,9 +41,19 @@ export default function HalfCard({ refId, title, subtitle, icon, description, ta
         </div>
         <div className="font-mono text-[9px] text-primary-container text-right">
           <span className="block opacity-60">{t("logs.status")}</span>
-          <span>STABLE</span>
+          <span>{statusText || "STABLE"}</span>
         </div>
       </div>
     </article>
   );
+
+  if (slug) {
+    return (
+      <Link href={`/projects/${slug}`} className="block col-span-1 md:col-span-6">
+        {content}
+      </Link>
+    );
+  }
+
+  return content;
 }
