@@ -253,6 +253,10 @@ export const projects: ProjectData[] = [
         label: "SOURCE_CODE_BACKEND",
         url: "https://github.com/DevBelzebubs/pgt-backend/tree/develop",
       },
+      {
+        label: "LIVE_DEMO",
+        url: "portfolio.pgt-frontend.pages.dev",
+      },
     ],
     gallery: [
       {
